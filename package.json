@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nodemon index.js",
-    "start":"nodemon index.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,6 @@
   "bugs": {
     "url": "https://github.com/softcp226/blockchaininternationalexchange/issues"
   },
-  "homepage": "https://github.com/softcp226/blockchaininternationalexchange#readme"
+  "homepage": "https://github.com/softcp226/blockchaininternationalexchange#readme",
+ 
 }
