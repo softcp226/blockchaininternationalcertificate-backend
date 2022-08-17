@@ -18,5 +18,10 @@
     "url": "https://github.com/softcp226/blockchaininternationalexchange/issues"
   },
   "homepage": "https://github.com/softcp226/blockchaininternationalexchange#readme",
- 
+  "dependencies": {
+    "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "mongoose": "^6.5.2",
+    "nodemon": "^2.0.19"
+  }
 }
