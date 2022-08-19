@@ -16,9 +16,9 @@
 input,select{
    
         /* margin: auto; */
-    width:85%;
+    width:80%;
     /* max-width: 80vw; */
-    padding: 15px;
+    padding: 17px;
     border-radius: 5px;
     border-color: #eee;
     border: 1px solid #eee;
@@ -32,9 +32,10 @@ box-sizing:content-box;
 }
 
 .amt{
-     width: 85%;
+     width: 80%;
  
-    padding: 15px;
+    padding: 17px;
+  
     border-radius: 5px;
     border-color: #eee;
     border: 1px solid #eee;
