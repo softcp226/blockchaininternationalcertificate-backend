@@ -16,7 +16,7 @@
 input,select{
    
         /* margin: auto; */
-    width:80%;
+    width:83%;
     /* max-width: 80vw; */
     padding: 17px;
     border-radius: 5px;
@@ -32,7 +32,7 @@ box-sizing:content-box;
 }
 
 .amt{
-     width: 80%;
+     width: 83%;
  
     padding: 17px;
   
@@ -54,7 +54,7 @@ button{
     color: #fff;
        margin: auto;
     margin-top: 8px;
-    margin-left: 15px;
+    margin-left: 12px;
 }
 /* select{
        
