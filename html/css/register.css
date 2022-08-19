@@ -266,11 +266,16 @@ body {
   color: #fff;
   text-transform: uppercase;
   border: none;
-  background-image: -moz-linear-gradient(to left, #74ebd5, #9face6);
+    background-image: -moz-linear-gradient(to left, #081336, #9face6);
+  background-image: -ms-linear-gradient(to left, #081336, #9face6);
+  background-image: -o-linear-gradient(to left, #081336, #9face6);
+  background-image: -webkit-linear-gradient(to left, #081336, #9face6);
+  background-image: linear-gradient(to left, #081336, #9face6); }
+  /* background-image: -moz-linear-gradient(to left, #74ebd5, #9face6);
   background-image: -ms-linear-gradient(to left, #74ebd5, #9face6);
   background-image: -o-linear-gradient(to left, #74ebd5, #9face6);
   background-image: -webkit-linear-gradient(to left, #74ebd5, #9face6);
-  background-image: linear-gradient(to left, #74ebd5, #9face6); }
+  background-image: linear-gradient(to left, #74ebd5, #9face6); } */
 
 input[type=checkbox]:not(old) {
   width: 2em;
