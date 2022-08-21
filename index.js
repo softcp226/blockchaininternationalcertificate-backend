@@ -1,8 +1,17 @@
-const express=require("express")
-const app=express()
+const express = require("express");
+require("dotenv").config();
+const app = express();
+app.use(express.json());
+const register_user = require("./api/register");
+app.use("/api/newUser/register", register_user);
 
-app.use("/",express.static("html"))
+const login = require("./api/login");
+app.use("/api/user/login", login);
 
-const port=process.env.PORT||3000
+app.use("/", express.static("html"));
 
-app.listen(port,()=>console.log(`App started and is running on port ${port}`))
+const port = process.env.PORT || 3000;
+
+app.listen(port, () =>
+  console.log(`App started and is running on port ${port}`),
+);

@@ -1,3 +1,5 @@
+/* https://www.brinknews.com/wp-content/uploads/2022/06/headway-5QgIuuBxKwM-unsplash-1-scaled.jpg */
+
 /* @extend display-flex; */
 display-flex, .display-flex, .display-flex-center {
   display: flex;
@@ -137,7 +139,7 @@ body {
   color: #222;
   font-weight: 400;
   font-family: 'Montserrat';
-  background-image: url("https://colorlib.com/etc/regform/colorlib-regform-8/images/signup-bg.jpg");
+  background-image: url("assets/headway.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   -moz-background-size: cover;
@@ -266,6 +268,7 @@ body {
   color: #fff;
   text-transform: uppercase;
   border: none;
+  cursor: pointer;
     background-image: -moz-linear-gradient(to left, #081336, #9face6);
   background-image: -ms-linear-gradient(to left, #081336, #9face6);
   background-image: -o-linear-gradient(to left, #081336, #9face6);
@@ -276,7 +279,7 @@ body {
   background-image: -o-linear-gradient(to left, #74ebd5, #9face6);
   background-image: -webkit-linear-gradient(to left, #74ebd5, #9face6);
   background-image: linear-gradient(to left, #74ebd5, #9face6); } */
-
+/* 
 input[type=checkbox]:not(old) {
   width: 2em;
   margin: 0;
@@ -324,12 +327,14 @@ input[type=checkbox]:not(old):checked + label > span:before {
   line-height: 1.2;
   text-align: center;
   font-family: 'Material-Design-Iconic-Font';
-  font-weight: bold; }
+  font-weight: bold; } */
 
 .label-agree-term {
   font-size: 12px;
   font-weight: 600;
-  color: #555; }
+  color: #555; 
+ 
+}
 
 .term-service {
   color: #555; }
