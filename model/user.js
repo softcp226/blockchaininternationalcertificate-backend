@@ -18,6 +18,12 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  balance: {
+    type: String,
+    required: true,
+    min: 0,
+    default: 0,
+  },
   Password: {
     type: String,
     required: true,

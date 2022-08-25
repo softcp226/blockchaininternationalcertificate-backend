@@ -11,12 +11,13 @@ const storage = multer.diskStorage({
 });
 
 const cb = (param) => {
-  console.log(param);
+  throw new Error(param);
 };
 const fileFilter = (req, file, cb) => {
   if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
     cb(null, true);
   } else {
+      throw new Error("Unsopported file");
     cb(JSON.stringify({ error: true, errMessage: "Unsopported file" }));
   }
 };
@@ -26,7 +27,7 @@ const upload = multer({
   // limits: {
   //   fileSize: 2024 * 2024
   // },
-  fileFilter: fileFilter,
+  // fileFilter: fileFilter,
 });
 
 module.exports = upload;

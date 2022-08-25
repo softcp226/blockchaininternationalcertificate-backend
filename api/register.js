@@ -13,18 +13,29 @@ const genToken = require("../token/genToken");
 const fs = require("fs");
 
 Router.post("/", upload.any("passport"), async (req, res) => {
-  console.log(req.body);
+  console.log(req.files[0].mimetype);
+  //   req.files.mimetype !== "image/jpeg" ||
+  //     (req.files.mimetype !== "image/png") !== true,
+  // );
+
+  if (
+    req.files[0].mimetype === "image/jpeg" ||
+    req.files[0].mimetype == "image/png" 
+  ) {
+   
+
   const req_isvalid = validate_newuser(req.body);
   if (req_isvalid != true)
     return res.status(400).json({ error: true, errMessage: req_isvalid });
- 
+
   try {
     const user = await User.findOne({ Email: req.body.Email });
     if (user)
-      return res
-        .status(400)
-        .json({ error: true, errMessage: "User already exist, please login" });
- 
+      return res.status(400).json({
+        error: true,
+        errMessage: "User already exist, please login",
+      });
+
     const uploader = async (path) => await cloudinary.uploads(path, "passport");
     let passport_url;
     const files = req.files;
@@ -43,7 +54,7 @@ Router.post("/", upload.any("passport"), async (req, res) => {
       });
 
     const password = await hashpassword(req.body.Password);
-    console.log("password",password)
+    console.log("password", password);
     const newUser = await new User({
       Name: req.body.Name,
       Email: req.body.Email,
@@ -71,12 +82,18 @@ Router.post("/", upload.any("passport"), async (req, res) => {
     res
       .status(200)
       .json({ error: false, message: { user: newUser._id }, token });
-      
   } catch (error) {
-    console.log(error)
+    console.log(error);
     res.status(400).json({ error: true, errMessage: error.message });
-   
   }
+
+}else{
+   return res.status(403).json({
+      error: true,
+      errMessage: "Unsupported file, please upload a valid photo",
+    });
+  
+}
 });
 
 module.exports = Router;
