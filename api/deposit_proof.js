@@ -23,7 +23,7 @@ Router.post("/", upload.any("proof"), verifyToken, async (req, res) => {
       return res.status(400).json({ error: true, errMessage: req_isvalid });
 
     try {
-      const deposit = await Deposit_req.findById(req.body.deposit_reqID);
+      const deposit = await Deposit_req.findOne({_id:req.body.deposit_reqID,user:req.body.user});
       if (!deposit)
         return res.status(403).json({
           error: true,
