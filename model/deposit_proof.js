@@ -1,16 +1,21 @@
+
 const mongoose = require("mongoose");
 const connect = require("./dbconnector");
-connect("connected todeposit proof database");
+connect("connected to deposit proof database");
 require("./user");
-// require("./certificate");
-require(".")
+require("./deposit_req");
+
 const deposit_proof_Schema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "user",
     required: true,
   },
-
+  deposit_req: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "deposit_req",
+    required: true,
+  },
   proof_url: {
     type: String,
     required: true,

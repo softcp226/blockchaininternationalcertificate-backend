@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const connect = require("./dbconnector");
-connect("connected to deposit database");
+connect("connected to Cert deposit database");
+require("./certificate")
 require("./user");
 const depositSchema = mongoose.Schema({
   user: {
@@ -8,11 +9,13 @@ const depositSchema = mongoose.Schema({
     ref: "user",
     required: true,
   },
-  amount: {
-    type: String,
+
+  certificate: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "certificate",
     required: true,
   },
-  purpose_of_deposit: {
+  amount: {
     type: String,
     required: true,
   },
@@ -22,5 +25,5 @@ const depositSchema = mongoose.Schema({
   },
   deposit_proof: String,
 });
-const Deposit = mongoose.model("deposit", depositSchema);
-module.exports = Deposit;
+const Cert_deposit = mongoose.model("cert_deposit", depositSchema);
+module.exports = Cert_deposit;

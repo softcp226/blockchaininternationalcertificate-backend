@@ -43,7 +43,7 @@ const handle_submit_form = async (form) => {
       return;
     }
     document.querySelector("#submit").innerHTML = "Success";
-    window.location.href = "/deposit.html";
+    window.location.href = `/cert-deposit.html?${result.message._id}`;
   } catch (error) {
     document.querySelector("#errMessage").innerHTML = error.message;
     document.querySelector("#submit").innerHTML = "Try Again";

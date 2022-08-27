@@ -46,9 +46,8 @@ select,.amount_div {
 }
 .wallet-div {
   width: 83%;
-  max-width: 83%;
+max-width: 83%;
 overflow-x: scroll;
-
   padding: 17px;
 
   border-radius: 5px;
@@ -91,6 +90,9 @@ button {
   .inp-div,.amount_div {
     width: 80%;
   }
+  .wallet-div{
+    width: 80%;
+  }
   .input_container.contain {
     display: flex;
     flex-wrap: wrap;
@@ -113,12 +115,13 @@ button {
     width: 80vw;
     max-width: 80vw;
     top: -10px;
+    padding: 10px;
   }
   .flex-input.container {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-evenly;
+    align-items: center;
+    justify-content: flex-start;
   }
   input,
   select,
@@ -126,6 +129,7 @@ button {
   .inp-div,.amount_div {
     width: 350px;
     margin: 8px;
+   padding: 20px;
   }
 
   .bg-txt-desc {
@@ -133,6 +137,15 @@ button {
     padding-top: 10px;
   }
   .wallet-div {
-    width: 90%;
+    width: 740px;
+    margin: 0px;
+    float: left;
+  }
+  /* .btn-container{
+    float: left;
+
+  } */
+  button{
+    margin: 0px;
   }
 }
