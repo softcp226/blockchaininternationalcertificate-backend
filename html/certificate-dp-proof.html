@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blockchain brokerage certificate dashboard</title>
+    <title>Blockchain brokerage certificate Deposit</title>
     <!-- css -->
     <link rel="stylesheet" href="css/dashboard.css" />
     <link rel="stylesheet" href="css/buy-certificate.css" />
@@ -126,64 +126,31 @@
         <a href="deposit.html">Deposit fund</a>
       </div>
     </nav>
-
     <main>
       <div class="input_container">
-        <h3 class="bg-txt-desc">Buy new Brokerage Certificate</h3>
+        <h3 class="bg-txt-desc" style="word-break: break-all">
+          Submit Screenshot/evidence/proof of payment
+        </h3>
 
-        <div class="flex-input container">
-          <div class="contain-input">
-            <input
-              type="text"
-              name="first_name"
-              id="first_name"
-              placeholder="First Name (will be used for certificate)"
-            />
-          </div>
-
-          <div class="contain-input">
-            <input
-              type="text"
-              name="last_name"
-              id="last_name"
-              placeholder="Last Name (will be used for certificate)"
-            />
-          </div>
-
-          <div class="contain-input">
-            <select name="country" id="country">
-              <option value="">Country</option>
-              <option value="nigeria">Nigeria</option>
-            </select>
-          </div>
-
-          <div class="contain-input">
-            <select name="certificate_type" id="certificate_type">
-              <option value="">Certificate Type</option>
-              <option value="basic yield certificate">
-                Basic Yield Certificate
-              </option>
-              <option value="premium yield certificate">
-                Premium Yield Certificate
-              </option>
-              <option value="ultimate yield certificate">
-                Ultimate Yield Certificate
-              </option>
-            </select>
-          </div>
-
-          <div class="amt">Select certicate type to seee price</div>
+        <div class="flex-input container" style="text-align: center">
+          <input
+            type="file"
+            name="photo"
+            id="photo"
+            class="photo"
+            style="padding-top: 10%; padding-bottom: 10%; margin: auto"
+          />
         </div>
-        <label
+        <p
           class="errMessage"
           id="errMessage"
-          style="color: red; margin: 10px"
-        ></label>
-        <br />
-        <button id="submit">Next to Payment</button>
+          style="color: red; margin: 10px; text-align: center; width: 90%"
+        ></p>
+
+        <button id="submit">Submit Proof</button>
       </div>
     </main>
     <script src="javascript/fetch_user.js"></script>
-    <script src="javascript/buy_certificate.js"></script>
+    <script src="javascript/cert_deposit_proof.js"></script>
   </body>
 </html>

@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blockchain brokerage certificate Deposit</title>
+    <title>Blockchain brokerage certificate dashboard</title>
     <!-- css -->
     <link rel="stylesheet" href="css/dashboard.css" />
-    <link rel="stylesheet" href="css/buy-certificate.css" />
+    <link rel="stylesheet" href="css/button.css">
     <script src="javascript/check_login.js"></script>
-    <script src="javascript/handle_nav.js"></script>
+        <script src="javascript/handle_nav.js"></script>
   </head>
   <body>
-    <header>
+       <header>
       <div class="harmburger_container" id="harmburger_container">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@
         </div>
 
         <div class="user_name_container">
-          <a class="user_name_txt" id="user_name_txt"> </a>
+          <a class="user_name_txt" id="user_name_txt"></a>
         </div>
       </div>
     </header>
@@ -76,21 +76,10 @@
       </div>
 
       <div class="hide_container">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="#fff"
-          class="bi bi-x-octagon"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z"
-          />
-          <path
-            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-          />
-        </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" class="bi bi-x-octagon" viewBox="0 0 16 16">
+  <path d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z"/>
+  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+</svg>
       </div>
 
       <div class="db-nav-lin-container">
@@ -111,12 +100,12 @@
             d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
           />
         </svg>
-        <a href="">Dashboard</a>
+        <a href="dashboard.html">Dashboard</a>
       </div>
 
       <div class="nav_link_container">
         <img src="css/assets/certificate.png" class="certificate_icon" alt="" />
-        <a href="">My certificate</a>
+        <a href="my-certificate.html">My certificate</a>
       </div>
 
       <div class="nav_link_container">
@@ -125,7 +114,7 @@
           class="certificate_icon"
           alt=""
         />
-        <a href="">Buy certificate</a>
+        <a href="buy-certificate.html">Buy certificate</a>
       </div>
 
       <div class="nav_link_container">
@@ -134,35 +123,79 @@
           class="certificate_icon"
           alt=""
         />
-        <a href="">Deposit fund</a>
+        <a href="deposit.html">Deposit fund</a>
       </div>
     </nav>
 
     <main>
-      <div class="input_container">
-        <h3 class="bg-txt-desc" style="word-break: break-all">
-          Submit Screenshot/evidence/proof of payment
-        </h3>
+      <div class="main_body_container">
 
-        <div class="flex-input container" style="text-align: center">
-          <input
-            type="file"
-            name="photo"
-            id="photo"
-            class="photo"
-            style="padding-top: 10%; padding-bottom: 10%; margin: auto"
-          />
+
+         <!-- <div class="card balance_container" style="background-color:#081336;color:#fff">
+          <div>
+            <b><p>Available Balance:</p></b>
+            <p class="bal"><b>$0.0</b</p>
+          </div>
+
+          <div>
+            <img src="css/assets/wallet.png" alt="balance" class="balance_icon" />
+          </div>
         </div>
-        <p
+          -->
+
+        <div class="card balance_container ">
+          <div>
+            <p>Issued Certificate:</p>
+            <b><p class="bal" id="bal">0</p></b>
+            <button id="submit">Download</button>
+          </div>
+
+          <div>
+            <img src="css/assets/certificate.png" alt="certificate" class="balance_icon" />
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="buy_cert tag" id="buy_cert_tag">
+<div class="certificate_details head">
+  <div>certificate ID</div>
+<div>Date Requested</div>
+<!-- <div>certificate Number</div> -->
+<div>certificate Type</div>
+<div>State</div>
+<div>Status</div>
+</div>
+
+
+<!-- <div class="certificate_details tail">
+  <div>certificate ID</div>
+<div>Date Requested</div>
+
+<div>certificate Type</div>
+<div class="state-txt">State</div>
+<div class="status-txt">Status</div>
+</div> -->
+
+ <!-- <label
           class="errMessage"
           id="errMessage"
-          style="color: red; margin: 10px; text-align: center; width: 90%"
-        ></p>
+          style="color: red; margin: 10px;text-align: center;"
+        ></label> -->
 
-        <button id="submit">Submit Proof</button>
+
+
       </div>
+
+            
+
+     
+
+
     </main>
-    <script src="javascript/fetch_user.js"></script>
-    <script src="javascript/deposit_proof.js"></script>
+
+    <script src="javascript/dashboard.js"></script>
+    <script src="javascript/fetch_certifcate.js"></script>
   </body>
 </html>

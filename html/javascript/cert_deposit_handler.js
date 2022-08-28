@@ -16,7 +16,7 @@ const handle_submit_cert_deposit = async (form) => {
       return;
     }
     document.querySelector("#submit").innerHTML = "Success";
-    window.location.href = `/deposit-proof.html?${result.message._id}`;
+    window.location.href = `/certificate-dp-proof.html?${result.message._id}`;
   } catch (error) {
     document.querySelector("#errMessage").innerHTML = error.message;
     document.querySelector("#submit").innerHTML = "Try Again";
@@ -78,7 +78,7 @@ document.querySelector("#submit").onclick = () => {
 
   const token=getCookie("token")
   const user=getCookie("user")
-  alert(amount)
+  
   handle_submit_cert_deposit({
     token,
     user,
