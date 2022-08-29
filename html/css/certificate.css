@@ -69,22 +69,25 @@ width: 85%;
     justify-content: space-between;
 }
 
+h1{
+   color: rgb(20, 70, 153);
+}
 @media (max-width:500px) {
     .blockchain-logo{
     height: 50px;
 }
     .canvas_div_pdf {
-  width: 800px;
+  width: 700px;
 height: 650px;
 
 }
 .bg-container {
   background-color: rgb(20, 70, 153);
-  width: 380px;
+  width: 350px;
   height: 600px;
   
 }
 .cert-badge{
-   left:0%; 
+   left:202px; 
 }
 }
