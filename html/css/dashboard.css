@@ -167,7 +167,16 @@ main {
 .bal {
   font-size: 25px;
 }
-
+ #google_translate_element span{
+  display: none;
+ }
+.goog-te-banner-frame{
+max-width: 99vw;
+width: 100%;
+}
+#google_translate_element .goog-te-gadget{
+color: #fff;
+}
 @keyframes move {
   from {
     opacity: 0.5;
@@ -214,6 +223,22 @@ main {
     text-align: center; */
   }
 
+  #google_translate_element select{
+    /* position: absolute; */
+    width:40vw;
+        border: 1px solid #ebebeb;
+    border-radius: 5px;
+    /* padding: 1px 20px; */
+    box-sizing: border-box;
+    font-size: 12px;
+    font-weight: 500;
+    color: #222;
+    margin: auto;
+    height: 50px;
+ 
+    /* max-width: 50%; */
+    /* height:20px */
+  }
   nav.hide {
     display: none;
       /* animation-name: move;

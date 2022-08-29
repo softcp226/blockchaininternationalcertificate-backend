@@ -31,6 +31,7 @@
       <!-- <div></div>
       <div></div>
       <div></div> -->
+       <div id="google_translate_element"></div>
 
       <div class="user_details container">
         <div class="user_icon_drop_low_btn">
@@ -197,5 +198,13 @@
 
     <!-- <script src="javascript/dashboard.js"></script> -->
     <script src="javascript/fetch_certifcate.js"></script>
+
+    <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </body>
 </html>
