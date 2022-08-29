@@ -70,6 +70,9 @@ width: 85%;
 }
 
 @media (max-width:500px) {
+    .blockchain-logo{
+    height: 50px;
+}
     .canvas_div_pdf {
   width: 800px;
 height: 650px;
