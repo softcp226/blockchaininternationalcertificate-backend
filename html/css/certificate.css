@@ -72,13 +72,13 @@ width: 85%;
 @media (max-width:500px) {
     .canvas_div_pdf {
   width: 800px;
-height: 1500px;
+height: 800px;
 
 }
 .bg-container {
   background-color: rgb(20, 70, 153);
   width: 380px;
-  height: 1000px;
+  height: 600px;
   
 }
 .cert-badge{
