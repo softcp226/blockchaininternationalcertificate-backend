@@ -52,10 +52,26 @@ width: 85%;
 }
 .cert-badge{
     position: absolute;
-    left: 28.9%;
+    left: 36.9%;
     writing-mode:vertical-rl;
    background-color: rgb(19, 64, 135);
    color: #fff;
    padding: 2px;
    font-weight: 600;
+}
+
+@media (max-width:500px) {
+    .canvas_div_pdf {
+  width: 200%;
+height: 100vh;
+}
+.bg-container {
+  background-color: rgb(20, 70, 153);
+  width: 50%;
+  height: 80vh;
+  
+}
+.cert-badge{
+   left:80%; 
+}
 }
