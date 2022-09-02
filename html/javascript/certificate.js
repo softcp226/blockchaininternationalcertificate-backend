@@ -43,4 +43,9 @@ function getPDF() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => getPDF());
+document.addEventListener("DOMContentLoaded", () => {
+   
+        alert("Please Use two fingers to shrink down certificate for better view on phone")
+    
+    // getPDF()
+});

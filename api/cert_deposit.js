@@ -10,7 +10,9 @@ Router.post("/", verifyToken, async (req, res) => {
   if (req_isvalid != true)
     return res.status(400).json({ error: true, errMessage: req_isvalid });
   try {
-    const deposit = await new Cert_deposit({
+   const certificate= await Certificate.findById(req.body.certificate);
+    if(!certificate)return res.status(400).json({error:true,errMessage:"Certificate you are trying to pay for no longer exist "})
+   const deposit = await new Cert_deposit({
       user: req.body.user,
       certificate: req.body.certificate,
       amount: parseInt(req.body.amount),
@@ -18,6 +20,9 @@ Router.post("/", verifyToken, async (req, res) => {
       payment_method: req.body.payment_method,
     });
     await deposit.save();
+    await certificate.set({cert_deposit:deposit._id})
+    await certificate.save()
+    
     res.status(200).json({ error: false, message: deposit });
   } catch (error) {
     res.status(400).json({ error: true, errMessage: error.message });

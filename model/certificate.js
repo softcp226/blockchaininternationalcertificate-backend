@@ -3,6 +3,7 @@ const connect = require("./dbconnector");
 connect("connected to certificate database");
 const getDay = require("../func/getDate");
 require("./user");
+require("./cert_deposit")
 const certificateSchema = mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -39,23 +40,27 @@ const certificateSchema = mongoose.Schema({
     required: true,
     default: getDay(),
   },
-
+  date_issued:String,
   state: {
     type: String,
     required: true,
     default: "requested",
-    enum: ["requested", "issued"],
+    enum: ["requested", "issued", "declined"],
   },
   Status: {
     type: String,
     required: true,
     default: "pending",
-    enum: ["pending", "active", "suspended"],
+    enum: ["pending", "active","inactive", "suspended"],
   },
   payment_requested: {
     type: Boolean,
     required: true,
     default: false,
+  },
+  cert_deposit: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "cert_deposit",
   },
 });
 

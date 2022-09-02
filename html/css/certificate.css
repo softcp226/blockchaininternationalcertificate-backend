@@ -72,6 +72,9 @@ width: 85%;
 h1{
    color: rgb(20, 70, 153);
 }
+.instruction{
+    text-align: center;
+}
 @media (max-width:500px) {
     .blockchain-logo{
     height: 50px;
