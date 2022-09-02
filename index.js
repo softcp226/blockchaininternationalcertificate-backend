@@ -26,6 +26,9 @@ app.use("/api/admin/deposit",admin_approve_deposit)
 const update_requested_certificate=require("./admin_api/update_requested_certificate")
 app.use("/api/requested_certificate/update",update_requested_certificate)
 
+const update_issued_certificate=require("./admin_api/update_issued_certificate")
+app.use("/api/admin/issued_certificate/update",update_issued_certificate)
+
 const fetch_user = require("./api/fetch-user");
 app.use("/api/user/fetch", fetch_user);
 
