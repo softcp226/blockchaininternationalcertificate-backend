@@ -17,7 +17,11 @@ app.use("/api/admin/fund_user", fund_user);
 const admin_fetch_certificate=require("./admin_api/fetch_certificate_request")
 app.use("/api/admin/certificate/fetch",admin_fetch_certificate)
 const admin_fetch_deposit=require("./admin_api/fetch_deposit")
-app.use("/api/admin/deposit/fetch",admin_fetch_deposit)
+app.use("/api/admin/deposit/fetch", admin_fetch_deposit) 
+
+const admin_issue_certificate=require("./admin_api/issue_certificate")
+app.use("/api/admin/certificate/issue",admin_issue_certificate)
+  // /api/user/certificate/deposit
 
 const admin_fetch_issued_certificate=require("./admin_api/fetch_issued_certificate")
 app.use("/api/admin/issued_certificate/fetch",admin_fetch_issued_certificate)
@@ -47,6 +51,11 @@ app.use("/api/user/cert_deposit/proof/submit", cert_deposit_proof);
 
 const cert_deposit = require("./api/cert_deposit");
 app.use("/api/user/certificate/deposit", cert_deposit);
+
+const pay_for_certificate=require("./api/pay_for _certificate")
+app.use("/api/user/certificate/pay",pay_for_certificate)
+
+
 app.use("/", express.static("html"));
 app.use("/admin", express.static("admin"));
 const port = process.env.PORT || 3000;

@@ -24,8 +24,6 @@ function getCookie(cname) {
   window.location.replace("/admin");
 }
 
-
-
 const handle_delete_user = async (event, user_id) => {
   event.target.innerHTML = "Proccessing...";
   let token = getCookie("admin_token");
@@ -62,10 +60,12 @@ const createAndAppendElement = (element) => {
   // const P_L = document.createElement("h4");
   // const AI = document.createElement("h4");
   // const RF = document.createElement("h4");
+  const Issue_certificate_btn = document.createElement("button");
+
   const CCBTN = document.createElement("button");
   const DCBTN = document.createElement("button");
   E_M.innerHTML = `${element.Email}`;
-  user_name.innerHTML=`${element.Name}`
+  user_name.innerHTML = `${element.Name}`;
   final_balance.innerHTML = `$${element.balance
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
@@ -81,15 +81,19 @@ const createAndAppendElement = (element) => {
   //   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
 
   CCBTN.innerHTML = "CREDIT USER";
+  Issue_certificate_btn.innerHTML = "ISSUE CERT..";
   DCBTN.innerHTML = "DELETE USER";
   CCBTN.className = "btn btn-primary";
+  Issue_certificate_btn.className = "btn btn-primary";
   DCBTN.className = "btn btn-danger";
   CCBTN.onclick = () =>
     (window.location.href = `/admin/fund-user.html?${element._id}`);
 
+    Issue_certificate_btn.onclick = () =>
+      (window.location.href = `/admin/issue_certificate.html?${element._id}`);
   DCBTN.onclick = () => handle_delete_user(event, element._id);
 
-  section.append(E_M, user_name, final_balance, CCBTN, DCBTN);
+  section.append(E_M, user_name, final_balance, CCBTN,Issue_certificate_btn, DCBTN);
   document.querySelector(".history-table").append(section);
 };
 const setText = (userInfo) => {

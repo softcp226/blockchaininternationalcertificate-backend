@@ -92,7 +92,7 @@ Router.post("/decline", verifyToken, async (req, res) => {
     await certificate.save();
     res.status(200).json({
       error: false,
-      message: "You have successfully issued and approved the certificate",
+      message: "You have successfully declined the requested certificate request",
     });
   } catch (error) {
         console.log(error);

@@ -23,7 +23,7 @@ Router.post("/", verifyToken, async (req, res) => {
 
     const issued_certificate = await Certificate.find({
       user: req.body.user,
-      payment_requested: true,
+      // payment_requested: true,
       state: "issued",
     });
     res.status(200).json({

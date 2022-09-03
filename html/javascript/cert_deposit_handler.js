@@ -1,5 +1,31 @@
 const show_input_error = (input) => (input.style.border = "2px solid red");
 
+
+
+const handle_pay_with_available_balance= async (form) => {
+  document.querySelector("#pay").innerHTML = "Proccessing...";
+  try {
+    const response = await fetch("/api/user/certificate/pay", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(form),
+    });
+    const result = await response.json();
+    console.log(result);
+    if (result.error) {
+      document.querySelector("#errMessage").innerHTML = result.errMessage;
+      document.querySelector("#pay").innerHTML = "Try Again";
+      return;
+    }
+    document.querySelector("#pay").innerHTML = "Success";
+    window.location.href = `/success.html`;
+  } catch (error) {
+    document.querySelector("#errMessage").innerHTML = error.message;
+    document.querySelector("#pay").innerHTML = "Try Again";
+  }
+};
+
+
 const handle_submit_cert_deposit = async (form) => {
   document.querySelector("#submit").innerHTML = "Proccessing...";
   try {
@@ -88,6 +114,23 @@ document.querySelector("#submit").onclick = () => {
 
   });
 };
+
+document.querySelector("#pay").onclick = () => {
+  // const payment_method = document.querySelector("#payment_method");
+  // if (!payment_method.value) return show_input_error(payment_method);
+
+  const token = getCookie("token");
+  const user = getCookie("user");
+
+  handle_pay_with_available_balance({
+    token,
+    user,
+    // payment_method: payment_method.value,
+    certificate: certificate_ID,
+    amount,
+  });
+};
+
 
 document.querySelector("#payment_method").onchange = () => {
   const payment_method = document.querySelector("#payment_method");

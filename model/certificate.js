@@ -53,11 +53,11 @@ const certificateSchema = mongoose.Schema({
     default: "pending",
     enum: ["pending", "active","inactive", "suspended"],
   },
-  payment_requested: {
-    type: Boolean,
-    required: true,
-    default: false,
-  },
+  // payment_requested: {
+  //   type: Boolean,
+  //   required: true,
+  //   default: false,
+  // },
   cert_deposit: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "cert_deposit",

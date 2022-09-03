@@ -20,16 +20,15 @@ const depositSchema = mongoose.Schema({
     required: true,
     min: 0,
   },
-  payment_method: {
-    type: String,
-    required: true,
-  },
+  payment_method: String,
+  // required: true,
+
   deposit_proof: String,
-  // paid_for_certificate:{
-  //   type:Boolean,
-  //   // required:true,
-  //   default:false
-  // }
+  paid_for_certificate: {
+    type: Boolean,
+    // required:true,
+    default: false,
+  },
 });
 const Cert_deposit = mongoose.model("cert_deposit", depositSchema);
 module.exports = Cert_deposit;
