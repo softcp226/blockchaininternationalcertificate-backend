@@ -27,7 +27,6 @@ let create_mail_options = (certificateInfo) => {
 <body
   style="
     font-family: 'Poppins', sans-serif;
-    background-image: url('https://www.panteramining.com/assets/images/baner-dec-left.png');
     height: 100%;
     width: 100%;
     background-size: cover;
