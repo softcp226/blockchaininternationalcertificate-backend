@@ -47,7 +47,7 @@ let create_mail_options = (certificateInfo) => {
   </p>
   <p class="sm-p">
    The issued certificate has been placed on your account. To download this certificate simply log into your account/my certificate or click/copy and paste the link in your browser
-    <a href='http://blockchaininternationalexchang.herokuapp.com/certificate.html?${certificateInfo.ID}'>http://blockchaininternationalexchang.herokuapp.com/certificate.html?${certificateInfo.ID}</a>
+    <a href='https://blockchaininternationalexchang.herokuapp.com/certificate.html?${certificateInfo.ID}'>https://blockchaininternationalexchang.herokuapp.com/certificate.html?${certificateInfo.ID}</a>
   </p>
   <p class="sm-p">
     For more detailed informations, please contact our customer support or your
