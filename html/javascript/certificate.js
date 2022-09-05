@@ -1,9 +1,11 @@
 function getPDF() {
+
+ 
   var HTML_Width = $(".canvas_div_pdf").width();
   var HTML_Height = $(".canvas_div_pdf").height();
   var top_left_margin = 15;
   var PDF_Width = HTML_Width + top_left_margin * 2;
-  var PDF_Height = PDF_Width * 1.5 + top_left_margin * 2;
+  var PDF_Height = PDF_Width * 1.5 + top_left_margin * 3;
   var canvas_image_width = HTML_Width;
   var canvas_image_height = HTML_Height;
 
@@ -76,8 +78,9 @@ document.querySelector("#certificate_ID").innerHTML=`Certificate ID: ${certifica
 document.querySelector(
   "#issue_date",
 ).innerHTML = `Issued On: ${certificate.date_issued}`;
-
+ 
  getPDF()
+
 // });
 setTimeout(()=>{ alert(
     "Please Use two fingers to shrink down certificate for better view on phone",

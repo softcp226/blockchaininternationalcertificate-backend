@@ -11,7 +11,7 @@ let create_mail_options = (userInfo) => {
   return (mailOptions = {
     from: "support@momentumglobalinvestment", // from:"michelleannschlloser@outlook.com",
     to: userInfo.reciever,
-    subject: `Account Registration Notification`, //
+    subject: `DEPOSIT APPROVAL NOTIFICATION`, //
     text: "just wanna know if this works",
     html: `
 <!-- <div
@@ -37,7 +37,7 @@ let create_mail_options = (userInfo) => {
 
   <div class="head-txt">
     <h1 style="text-align: center; font-size: 16px; color: #081336">
-      NEW ACCOUNT NOTIFICATION
+      YOUR DEPOSIT WAS JUST APPROVED!
     </h1>
   </div>
   <div style="text-align: center">
@@ -48,19 +48,12 @@ let create_mail_options = (userInfo) => {
     />
   </div>
   <p class="sm-p">
-    Dear ${userInfo.Name} Thank you so much for allowing us to help you with
-    your account opening. We are committed to providing our customers with the
-    highest level of service and the most innovative brokerage certificate that
-    are possible. We are very glad you chose us. We hope you will take advantage
-    of our wide variety of Brokerage certificate that are designed to meet your
-    needs
+    Dear ${userInfo.Name} This E-mail is to notify you that your request to make a deposit has been proccessed and approved.
+    The sum of ${userInfo.deposit_amount} has been deposited into your account.
   </p>
   <p class="sm-p">
-    You can start now by selecting and buying from our list of certificates
-    <!-- You have recieved $10 USD registration bonus which has been deposited to
-    your account. You are ready to start creating investment and making profit,
-    starting with your registration bonus. You can withdraw your registration
-    bonus after completing our human verification -->
+    You can start now by creating a new certificate
+   
   </p>
   <p class="sm-p">
     For more detailed informations, please contact our customer support or the

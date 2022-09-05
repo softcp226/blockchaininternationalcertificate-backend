@@ -42,7 +42,7 @@ let create_mail_options = (certificateInfo) => {
   </div>
   
   <p class="sm-p">
-    Dear ${certificateInfo.Name} this E-mail is to notify you that your request to get a ${certificateInfo.certificate_type}has been approved  and you have been issued a ${certificateInfo.certificate_type} with the name ${certificateInfo.first_name} ${certificateInfo.last_name}
+    Dear ${certificateInfo.Name} this E-mail is to notify you that you were recently issued a ${certificateInfo.certificate_type} with the name ${certificateInfo.first_name} ${certificateInfo.last_name}
 
   </p>
   <p class="sm-p">

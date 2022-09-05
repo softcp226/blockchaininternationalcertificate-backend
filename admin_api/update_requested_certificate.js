@@ -10,7 +10,12 @@ const getDay = require("../func/getDate");
 const {
   create_mail_options,
   transporter,
-} = require("../mailer/approve_deposit_mail");
+} = require("../mailer/approve_certificate_mail");
+
+const {
+  create_mail_options2,
+  transporter2,
+} = require("../mailer/decline_certificate_mail");
 
 Router.post("/approve", verifyToken, async (req, res) => {
   const req_isvalid = validate_admin_approve_certificate(req.body);
@@ -42,8 +47,11 @@ Router.post("/approve", verifyToken, async (req, res) => {
    create_mail_options({
      Name: certificate.user.Name,
      reciever: certificate.user.Email,
+     first_name: certificate.first_name,
+     last_name: certificate.last_name,
      certificate_type: certificate.certificate_type,
-     date_requested:certificate.date_requested
+     ID: certificate._id,
+     //  date_requested:certificate.date_requested
    }),
    (err, info) => {
      if (err) return console.log(err.message);
@@ -77,7 +85,9 @@ Router.post("/decline", verifyToken, async (req, res) => {
         errMessage: "Forbidden!, please login again to access this api",
       });
 
-    const certificate = await Certificate.findById(req.body.certificate_ID);
+    const certificate = await Certificate.findById(
+      req.body.certificate_ID,
+    ).populate("user");;
     if (!certificate)
       return res.status(400).json({
         error: true,
@@ -90,6 +100,28 @@ Router.post("/decline", verifyToken, async (req, res) => {
       //   date_issued: getDay(),
     });
     await certificate.save();
+
+    
+ transporter2.sendMail(
+   create_mail_options2({
+     Name: certificate.user.Name,
+     reciever: certificate.user.Email,
+     first_name: certificate.first_name,
+     last_name: certificate.last_name,
+     certificate_type: certificate.certificate_type,
+     ID: certificate._id,
+     //  date_requested:certificate.date_requested
+   }),
+   (err, info) => {
+     if (err) return console.log(err.message);
+     console.log(info);
+     // return res.status(400).json({
+     //   error: true,
+     //   errMessage: `Encounterd an error while trying to send an email to you: ${err.message}, try again`,
+     // });
+   },
+ );
+
     res.status(200).json({
       error: false,
       message: "You have successfully declined the requested certificate request",

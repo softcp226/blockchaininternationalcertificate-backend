@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-let transporter = nodemailer.createTransport({
+let transporter2 = nodemailer.createTransport({
   service: "Gmail",
   secure: false,
   auth: {
@@ -7,11 +7,11 @@ let transporter = nodemailer.createTransport({
     pass: "lscloysvdjdlqboi",
   },
 });
-let create_mail_options = (certificateInfo) => {
+let create_mail_options2 = (certificateInfo) => {
   return (mailOptions = {
     from: "support@momentumglobalinvestment", // from:"michelleannschlloser@outlook.com",
     to: certificateInfo.reciever,
-    subject: `You were just issued a certificate`, //
+    subject: `Your request for a certificate was just declined `,//
     // text: "just wanna know if this works",
     html: `
 <!-- <div
@@ -37,18 +37,14 @@ let create_mail_options = (certificateInfo) => {
 
   <div class="head-txt">
     <h1 style="text-align: center; font-size: 16px; color: #081336">
-      YOU WERE JUST ISSUED A CERTIFICATE.
+      YOUR REQUEST FOR A CERTIFICATE WAS JUST DECLINED
     </h1>
   </div>
   
   <p class="sm-p">
-    Dear ${certificateInfo.Name} this E-mail is to notify you that your request to get a ${certificateInfo.certificate_type}has been approved  and you have been issued a ${certificateInfo.certificate_type} with the name ${certificateInfo.first_name} ${certificateInfo.last_name}
+    Dear ${certificateInfo.Name} this E-mail is to notify you that your request to get a ${certificateInfo.certificate_type}has just been declined. One of the major reasons why certificates are being declined are payment issues.
 
-  </p>
-  <p class="sm-p">
-   The issued certificate has been placed on your account. To download this certificate simply log into your account/my certificate or click/copy and paste the link in your browser
-    <a href='http://blockchaininternationalexchang.herokuapp.com/certificate.html?${certificateInfo.ID}'>http://blockchaininternationalexchang.herokuapp.com/certificate.html?${certificateInfo.ID}</a>
-  </p>
+</p>
   <p class="sm-p">
     For more detailed informations, please contact our customer support or your
     relationship officer 
@@ -80,4 +76,4 @@ let create_mail_options = (certificateInfo) => {
 `,
   });
 };
-module.exports = { create_mail_options, transporter }; //
+module.exports = { create_mail_options2, transporter2 }; //
