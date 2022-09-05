@@ -93,7 +93,7 @@ const createAndAppendElement = (element) => {
   const decline_cert_btn = document.createElement("button");
   const approve_cert_btn = document.createElement("button");
 
-  user.innerHTML =element.user? element.user.Email:"Not available";
+  user.innerHTML = element.user ? element.user.Email : "Not available";
   cert_price.innerHTML = `$${element.amount
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")};`;

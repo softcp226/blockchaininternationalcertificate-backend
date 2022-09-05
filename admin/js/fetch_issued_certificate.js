@@ -96,7 +96,7 @@ const createAndAppendElement = (element) => {
   // const decline_cert_btn = document.createElement("button");
   // const approve_cert_btn = document.createElement("button");
 
-  user.innerHTML = element.user.Email;
+  user.innerHTML = element.user? element.user.Email : "Not available";
   cert_type.innerHTML = element.certificate_type;
   state.innerHTML = element.state;
   status.innerHTML = element.Status;
