@@ -7,12 +7,12 @@ function setCookie(user, token) {
   // document.cookie=`email=${email} ; ${expires}`
   document.cookie = `user=${user} ; ${expires}`;
   document.cookie = `token=${token} ; ${expires}`;
-  // let navigate;
-  // const params = new URLSearchParams(window.location.search);
-  // for (const param of params) {
-  //   navigate = param[0];
-  // }
-  // if (navigate) return window.location.replace(navigate);
+  let navigate;
+  const params = new URLSearchParams(window.location.search);
+  for (const param of params) {
+    navigate = param[0];
+  }
+  if (navigate) return window.location.replace(navigate);
   window.location.replace("/dashboard.html");
 }
 const show_input_error = (input) => (input.style.border = "2px solid red");

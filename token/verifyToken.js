@@ -13,7 +13,7 @@ const verifyToken = (req, res, next) => {
     next();
   } catch (error) {
     res
-      .status(400)
+      .status(403)
       .json({
         error: true,
         errMessage: `${error.message} please login to access this api`,

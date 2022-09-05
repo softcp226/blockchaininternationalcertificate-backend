@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blockchain brokerage certificate dashboard</title>
     <!-- css -->
-    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/my_certificate.css" />
+        <link rel="stylesheet" href="css/button.css">
     <script src="javascript/check_login.js"></script>
         <script src="javascript/handle_nav.js"></script>
   </head>
@@ -132,7 +133,7 @@
       <div class="main_body_container">
 
 
-         <div class="card balance_container" style="background-color:#081336;color:#fff">
+         <!-- <div class="card balance_container" style="background-color:#081336;color:#fff">
           <div>
             <b><p>Available Balance:</p></b>
             <p class="bal"><b>$0.0</b</p>
@@ -141,13 +142,14 @@
           <div>
             <img src="css/assets/wallet.png" alt="balance" class="balance_icon" />
           </div>
-        </div>
+        </div> -->
          
 
         <div class="card balance_container ">
           <div>
-            <p>My certificates:</p>
+            <p>Issued certificates:</p>
             <b><p class="bal" id="bal">0</p></b>
+            <button id="submit">Download All</button>
           </div>
 
           <div>
@@ -160,12 +162,13 @@
 
       <div class="buy_cert tag" id="buy_cert_tag">
 <div class="certificate_details head">
-  <div style="margin-left: 7px;">certificate ID</div>
+  <div style="margin-left: 5px;">certificate ID</div>
 <div>Date Requested</div>
 <!-- <div>certificate Number</div> -->
 <div>certificate Type</div>
 <div>State</div>
 <div>Status</div>
+<div>Download Certificate</div>
 </div>
 
 
@@ -195,8 +198,8 @@
 
     </main>
 
-    <script src="javascript/dashboard.js"></script>
-    <script src="javascript/fetch_certifcate.js"></script>
+    <script src="javascript/my_certificate.js"></script>
+    <script src="javascript/fetch-certificate-my-certificat.js"></script>
     <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');

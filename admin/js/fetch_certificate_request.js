@@ -24,9 +24,6 @@ function getCookie(cname) {
   window.location.replace("/admin");
 }
 
-
-
-
 const handle_approve_certificate = async (event, certificate_ID) => {
   event.target.innerHTML = "Proccessing...";
   let token = getCookie("admin_token");
@@ -65,7 +62,7 @@ const handle_decline_certificate = async (event, certificate_ID) => {
     const response = await fetch("/api/requested_certificate/update/decline", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ token, admin,  certificate_ID }),
+      body: JSON.stringify({ token, admin, certificate_ID }),
     });
     const result = await response.json();
     console.log(result);
@@ -103,14 +100,26 @@ const createAndAppendElement = (element) => {
   cert_type.innerHTML = element.certificate_type;
   state.innerHTML = element.state;
   status.innerHTML = element.Status;
-  payment_proof_btn.onclick = () =>
-    (window.location.href = `${element.cert_deposit.deposit_proof}`);
+  payment_proof_btn.onclick = () => {
+    // if (element.cert_deposit.paid_for_certificate){
+      element.cert_deposit.paid_for_certificate == true
+        ? alert(
+            "the user paid for this certificate with their available balance",
+          )
+        : (window.location.href = `${element.cert_deposit.deposit_proof}`);
+      };
+    // }
+
   decline_cert_btn.onclick = () =>
     handle_decline_certificate(event, element._id);
   approve_cert_btn.onclick = () =>
     handle_approve_certificate(event, element._id);
 
-  payment_proof_btn.innerHTML = "Payment Proof";
+  payment_proof_btn.innerHTML =
+    element.cert_deposit?element.cert_deposit.paid_for_certificate == true
+      ? "paid"
+      : "Payment Proof" :"Not available";
+
   decline_cert_btn.innerHTML = "Decline Cert.. ";
   approve_cert_btn.innerHTML = "Approve Cert.. ";
   payment_proof_btn.className = "btn btn-primary";

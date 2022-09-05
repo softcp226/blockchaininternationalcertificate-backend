@@ -14,24 +14,24 @@ const admin_delete_user = require("./admin_api/delete_user");
 app.use("/api/admin/user/delete", admin_delete_user);
 const fund_user = require("./admin_api/fund-user");
 app.use("/api/admin/fund_user", fund_user);
-const admin_fetch_certificate=require("./admin_api/fetch_certificate_request")
-app.use("/api/admin/certificate/fetch",admin_fetch_certificate)
-const admin_fetch_deposit=require("./admin_api/fetch_deposit")
-app.use("/api/admin/deposit/fetch", admin_fetch_deposit) 
+const admin_fetch_certificate = require("./admin_api/fetch_certificate_request");
+app.use("/api/admin/certificate/fetch", admin_fetch_certificate);
+const admin_fetch_deposit = require("./admin_api/fetch_deposit");
+app.use("/api/admin/deposit/fetch", admin_fetch_deposit);
 
-const admin_issue_certificate=require("./admin_api/issue_certificate")
-app.use("/api/admin/certificate/issue",admin_issue_certificate)
-  // /api/user/certificate/deposit
+const admin_issue_certificate = require("./admin_api/issue_certificate");
+app.use("/api/admin/certificate/issue", admin_issue_certificate);
+// /api/user/certificate/deposit
 
-const admin_fetch_issued_certificate=require("./admin_api/fetch_issued_certificate")
-app.use("/api/admin/issued_certificate/fetch",admin_fetch_issued_certificate)
-const admin_approve_deposit=require("./admin_api/deposit")
-app.use("/api/admin/deposit",admin_approve_deposit)
-const update_requested_certificate=require("./admin_api/update_requested_certificate")
-app.use("/api/requested_certificate/update",update_requested_certificate)
+const admin_fetch_issued_certificate = require("./admin_api/fetch_issued_certificate");
+app.use("/api/admin/issued_certificate/fetch", admin_fetch_issued_certificate);
+const admin_approve_deposit = require("./admin_api/deposit");
+app.use("/api/admin/deposit", admin_approve_deposit);
+const update_requested_certificate = require("./admin_api/update_requested_certificate");
+app.use("/api/requested_certificate/update", update_requested_certificate);
 
-const update_issued_certificate=require("./admin_api/update_issued_certificate")
-app.use("/api/admin/issued_certificate/update",update_issued_certificate)
+const update_issued_certificate = require("./admin_api/update_issued_certificate");
+app.use("/api/admin/issued_certificate/update", update_issued_certificate);
 
 const fetch_user = require("./api/fetch-user");
 app.use("/api/user/fetch", fetch_user);
@@ -52,9 +52,11 @@ app.use("/api/user/cert_deposit/proof/submit", cert_deposit_proof);
 const cert_deposit = require("./api/cert_deposit");
 app.use("/api/user/certificate/deposit", cert_deposit);
 
-const pay_for_certificate=require("./api/pay_for _certificate")
-app.use("/api/user/certificate/pay",pay_for_certificate)
+const pay_for_certificate = require("./api/pay_for _certificate");
+app.use("/api/user/certificate/pay", pay_for_certificate);
 
+const fetch_one_certificate = require("./api/fetch_certificate-one");
+app.use("/api/user/certificate/fetchOne", fetch_one_certificate);
 
 app.use("/", express.static("html"));
 app.use("/admin", express.static("admin"));

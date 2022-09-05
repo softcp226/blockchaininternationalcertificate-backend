@@ -43,9 +43,102 @@ function getPDF() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-   
-        alert("Please Use two fingers to shrink down certificate for better view on phone")
-    
-    // getPDF()
-});
+const certificate_type=(certificate)=>{
+  switch (certificate) {
+    case "basic yield certificate":
+      return "Basic";
+      break;
+
+    case "premium yield certificate":
+      return "Basic";
+      break;
+
+    case "ultimate yield certificate":
+      return "Ultimate";
+      break;
+
+    default:
+      return "Basic";
+      break;
+  }
+}
+
+const setText=(certificate)=>{
+// document.addEventListener("DOMContentLoaded", () => {
+
+document.querySelector(
+  "#username",
+).innerHTML = `${certificate.first_name.toUpperCase()} ${certificate.last_name.toUpperCase()}`;
+document.querySelector("#certificate_type").innerHTML = certificate_type(
+  certificate.certificate_type,
+).toUpperCase();
+document.querySelector("#certificate_ID").innerHTML=`Certificate ID: ${certificate._id}`;
+document.querySelector(
+  "#issue_date",
+).innerHTML = `Issued On: ${certificate.date_issued}`;
+
+ getPDF()
+// });
+setTimeout(()=>{ alert(
+    "Please Use two fingers to shrink down certificate for better view on phone",
+  )},1000)
+}
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   alert(
+//     "Please Use two fingers to shrink down certificate for better view on phone",
+//   );
+
+//   // getPDF()
+// });
+
+const getParam = () => {
+  const urlParams = new URLSearchParams(location.search);
+
+  for (const [key, value] of urlParams) {
+    return key;
+  }
+};
+
+const getCookie = (cname) => {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  // return "";
+  window.location.href = "/login.html";
+};
+
+(async () => {
+  const user = getCookie("user");
+  const token = getCookie("token");
+  certificate_ID = getParam();
+  try {
+    const response = await fetch("/api/user/certificate/fetchOne", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ token, user, certificate_ID }),
+    });
+    const result = await response.json();
+    console.log(result);
+    console.log(response.status)
+    if (result.error) {
+      if(response.status==403)return window.location.href=`/login.html?certificate.html?${certificate_ID}`
+      window.location.replace("my_certificate.html")
+    } else {
+      // document.addEventListener("DOMContentLoaded",()=>setText(result.message))
+      setText(result.message);
+    }
+  } catch (error) {
+    console.log(error);
+    alert(error.message);
+  }
+})();

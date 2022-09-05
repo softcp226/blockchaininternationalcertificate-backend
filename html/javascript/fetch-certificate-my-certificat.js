@@ -21,21 +21,25 @@ const setCertText = (result) => {
     const certificateType = document.createElement("div");
     const certificateState = document.createElement("div");
     const certificateStatus = document.createElement("div");
-
+    const download_btn = document.createElement("button");
+    
     container_div.className = "certificate_details tail";
     certificateStatus.className = result.Status;
-     certificateID.style.marginLeft = "7px";
+    certificateID.style.marginLeft="5px"
     certificateID.innerHTML = `${result._id.slice(0, 15)}...`;
     certificateDate.innerHTML = result.date_requested;
     certificateType.innerHTML = result.certificate_type;
     certificateState.innerHTML = result.state;
     certificateStatus.innerHTML = result.Status;
+    download_btn.innerHTML = result.state=="issued"?"Download":"-----"
+    download_btn.onclick=()=>result.state=="issued"?window.open(`/certificate.html?${result._id}`) : ""
     container_div.append(
       certificateID,
       certificateDate,
       certificateType,
       certificateState,
       certificateStatus,
+      download_btn
     );
     document.querySelector("#buy_cert_tag").append(container_div);
   });

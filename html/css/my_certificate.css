@@ -307,11 +307,11 @@ color: #fff;
     justify-content: space-evenly;
     padding-top: 15px;
     font-weight: 100;
-    width: 1000px;
+    width: 979px;
   }
  
    .certificate_details.head>div{
-      width: 200px;
+      width: 240px;
     }
     .certificate_details.tail>div{
       width: 200px;
@@ -401,7 +401,7 @@ color: #fff;
     align-items: center;
     justify-content: space-evenly;
     padding-top: 15px;
-    width: 1000px;
+    width: 1200px;
     color: #081336;
   }
   .certificate_details.tail {
@@ -409,13 +409,13 @@ color: #fff;
     align-items: center;
     justify-content: space-evenly;
     padding-top: 15px;
-    width: 1000px;
+    width: 1200px;
   }
     .certificate_details.head>div{
-      width: 200px;
+      width: 240px;
     }
     .certificate_details.tail>div{
-      width: 200px;
+      width: 240px;
     }
 }
 
@@ -456,15 +456,15 @@ color: #fff;
     align-items: center;
     justify-content: space-evenly;
     padding-top: 15px; */
-    width: 80vw;
+    width: 82vw;
   }
   .certificate_details.tail {
-    width: 80vw;
+    width: 82vw;
   }
     .certificate_details.head>div{
-      width: 16vw;
+      width: 13.6vw;
     }
     .certificate_details.tail>div{
-      width: 16vw;
+      width: 13.6vw;
     }
 }
