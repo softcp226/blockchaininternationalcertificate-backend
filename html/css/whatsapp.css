@@ -1,0 +1,15 @@
+.bottom-right{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+}
+.whatsapp-icon{
+    width: 70px;
+}
+
+@media (max-width:500px) {
+  .whatsapp-icon{
+    width: 50px;
+}  
+}
