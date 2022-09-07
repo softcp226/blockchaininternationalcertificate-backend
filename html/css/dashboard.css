@@ -48,6 +48,7 @@ header {
 .user_icon_drop_low_btn {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .user_icon {
   width: 50px;
@@ -57,6 +58,48 @@ header {
 .user_name_container {
   margin: 10px;
   margin-top: 20px;
+}
+
+@keyframes moveBox {
+  from {
+    opacity: 0;
+    top: 5px;
+  }
+  to {
+    opacity: 1;
+   top: 65px;
+  }
+}
+
+.box-container.display{
+  background-color: #fff;
+height: 80px;
+width: 110px;
+box-shadow: 0 3px 15px rgb(0 0 0 / 5%);
+
+text-align: center;
+padding: 10px;
+position: fixed;
+top: 65px;
+/* left: 1px; */
+right: 4.2%;
+z-index: 200;
+border-radius: 2px;
+animation-name: moveBox;
+animation-duration: 1s;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+}
+.box-container a{
+  color: #000;
+  font-size: 15px;
+}
+.box-container>div{
+  margin: 3px;
+  margin-top: 10px;
+}
+.box-container.hide{
+  display: none;
 }
 nav {
   background-color: #081336;
@@ -187,6 +230,16 @@ color: #fff;
     width: 100vw;
   }
 }
+@keyframes moveBox {
+  from {
+    opacity: 0;
+    top: 5px;
+  }
+  to {
+    opacity: 1;
+   top: 85px;
+  }
+}
 
 @media (max-width: 699px) {
   header {
@@ -222,6 +275,18 @@ color: #fff;
     max-width: 80vw;
     text-align: center; */
   }
+
+  
+.box-container.display{
+animation-name: moveBox;
+animation-duration: 1s;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+top: 85px;
+right: 10%;
+z-index: 200;
+width: 95px;
+}
 
   #google_translate_element select{
     /* position: absolute; */

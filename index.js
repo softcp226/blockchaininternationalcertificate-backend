@@ -58,6 +58,9 @@ app.use("/api/user/certificate/pay", pay_for_certificate);
 const fetch_one_certificate = require("./api/fetch_certificate-one");
 app.use("/api/user/certificate/fetchOne", fetch_one_certificate);
 
+const recover_password=require("./api/recover-password")
+app.use("/api/user/password/recover",recover_password)
+
 app.use("/", express.static("html"));
 app.use("/admin", express.static("admin"));
 const port = process.env.PORT || 3000;

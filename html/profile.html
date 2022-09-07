@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blockchain brokerage certificate dashboard</title>
     <!-- css -->
-    <link rel="stylesheet" href="css/dashboard.css" />
+<link rel="stylesheet" href="css/profile.css">
+<link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/buy-certificate.css" />
+
     <script src="javascript/check_login.js"></script>
         <script src="javascript/handle_nav.js"></script>
   </head>
@@ -135,74 +138,25 @@
     </nav>
 
     <main>
-      <div class="main_body_container">
-
-
-         <div class="card balance_container" style="background-color:#081336;color:#fff">
-          <div>
-            <b><p>Available Balance:</p></b>
-            <p class="bal"><b>$0.0</b</p>
-          </div>
-
-          <div>
-            <img src="css/assets/wallet.png" alt="balance" class="balance_icon" />
-          </div>
-        </div>
-         
-
-        <div class="card balance_container ">
-          <div>
-            <p>My certificates:</p>
-            <b><p class="bal" id="bal">0</p></b>
-          </div>
-
-          <div>
-            <img src="css/assets/certificate.png" alt="certificate" class="balance_icon" />
-          </div>
+      
+        <div class="user-profile-container">
+            <h3>UPDATE USER INFORMATION</h3>
+<input type="name" name="name" id="name" placeholder="Your Name">
+<input type="Email" name="email" id="email" placeholder="Your Email">
+<button style="float: left; margin-right: 4px;">UPDATE</button>
         </div>
 
-
-      </div>
-
-      <div class="buy_cert tag" id="buy_cert_tag">
-<div class="certificate_details head">
-  <div style="margin-left: 7px;">certificate ID</div>
-<div>Date Requested</div>
-<!-- <div>certificate Number</div> -->
-<div>certificate Type</div>
-<div>State</div>
-<div>Status</div>
-</div>
-
-
-<!-- <div class="certificate_details tail">
-  <div>certificate ID</div>
-<div>Date Requested</div>
-
-<div>certificate Type</div>
-<div class="state-txt">State</div>
-<div class="status-txt">Status</div>
-</div> -->
-
- <!-- <label
-          class="errMessage"
-          id="errMessage"
-          style="color: red; margin: 10px;text-align: center;"
-        ></label> -->
-
-
-
-      </div>
-
-            
-
-     
-
-
+     <div class="user-password-container">
+        <h3>Change Password</h3>
+        <input type="password" name="old_password" id="old_password" placeholder="Old Password">
+<input type="password" name="password" id="password" placeholder="New Password">
+<input type="password" name="password" id="retype-password" placeholder="Repeat Password ">
+<button style="float: left;">Change Password</button>
+     </div>
     </main>
-
-    <script src="javascript/dashboard.js"></script>
-    <script src="javascript/fetch_certifcate.js"></script>
+ <script src="javascript/fetch_user.js"></script>
+    <!-- <script src="javascript/dashboard.js"></script>
+    <script src="javascript/fetch_certifcate.js"></script> -->
     <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
