@@ -1,4 +1,4 @@
-const connectDB = require("./dbConnector");
+const connectDB = require("./dbconnector");
 const mongoose = require("mongoose");
 const user = require("./user");
 connectDB("connected to recover password db");
