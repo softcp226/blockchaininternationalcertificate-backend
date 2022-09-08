@@ -61,6 +61,12 @@ app.use("/api/user/certificate/fetchOne", fetch_one_certificate);
 const recover_password=require("./api/recover-password")
 app.use("/api/user/password/recover",recover_password)
 
+const change_password=require("./api/change-password")
+app.use("/api/user/password/change",change_password)
+const update_user=require("./api/update-user")
+app.use("/api/user/update",update_user)
+
+
 app.use("/", express.static("html"));
 app.use("/admin", express.static("admin"));
 const port = process.env.PORT || 3000;

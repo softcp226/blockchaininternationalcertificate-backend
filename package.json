@@ -8,6 +8,7 @@
     "start": "nodemon index.js"
     
   },
+  "engines": { "node": "16.x" },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/softcp226/blockchaininternationalexchange.git"

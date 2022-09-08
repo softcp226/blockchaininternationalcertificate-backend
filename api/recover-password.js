@@ -11,6 +11,7 @@ const {
 } = require("../mailer/recover-password");
 
 Router.post("/", async (req, res) => {
+  console.log(req.body)
   const request_isvalid = validate_user_mail(req.body);
   if (request_isvalid != true)
     return res.status(400).json({ error: true, errMessage: request_isvalid });

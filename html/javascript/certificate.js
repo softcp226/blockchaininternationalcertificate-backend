@@ -1,6 +1,5 @@
-function getPDF() {
 
- 
+function getPDF() {
   var HTML_Width = $(".canvas_div_pdf").width();
   var HTML_Height = $(".canvas_div_pdf").height();
   var top_left_margin = 15;
@@ -45,14 +44,14 @@ function getPDF() {
   });
 }
 
-const certificate_type=(certificate)=>{
+const certificate_type = (certificate) => {
   switch (certificate) {
     case "basic yield certificate":
       return "Basic";
       break;
 
     case "premium yield certificate":
-      return "Basic";
+      return "Premium";
       break;
 
     case "ultimate yield certificate":
@@ -63,29 +62,33 @@ const certificate_type=(certificate)=>{
       return "Basic";
       break;
   }
-}
+};
 
-const setText=(certificate)=>{
-// document.addEventListener("DOMContentLoaded", () => {
+const setText = (certificate) => {
+  // document.addEventListener("DOMContentLoaded", () => {
 
-document.querySelector(
-  "#username",
-).innerHTML = `${certificate.first_name.toUpperCase()} ${certificate.last_name.toUpperCase()}`;
-document.querySelector("#certificate_type").innerHTML = certificate_type(
-  certificate.certificate_type,
-).toUpperCase();
-document.querySelector("#certificate_ID").innerHTML=`Certificate ID: ${certificate._id}`;
-document.querySelector(
-  "#issue_date",
-).innerHTML = `Issued On: ${certificate.date_issued}`;
- 
- getPDF()
+  document.querySelector(
+    "#username",
+  ).innerHTML = `${certificate.first_name.toUpperCase()} ${certificate.last_name.toUpperCase()}`;
+  document.querySelector("#certificate_type").innerHTML = certificate_type(
+    certificate.certificate_type,
+  ).toUpperCase();
+  document.querySelector(
+    "#certificate_ID",
+  ).innerHTML = `Certificate ID: ${certificate._id}`;
+  document.querySelector(
+    "#issue_date",
+  ).innerHTML = `Issued On: ${certificate.date_issued}`;
 
-// });
-setTimeout(()=>{ alert(
-    "Please Use two fingers to shrink down certificate for better view on phone",
-  )},1000)
-}
+  getPDF();
+
+  // });
+  setTimeout(() => {
+    alert(
+      "Please Use two fingers to shrink down certificate for better view on phone",
+    );
+  }, 1000);
+};
 
 // document.addEventListener("DOMContentLoaded", () => {
 //   alert(
@@ -132,10 +135,11 @@ const getCookie = (cname) => {
     });
     const result = await response.json();
     console.log(result);
-    console.log(response.status)
+    console.log(response.status);
     if (result.error) {
-      if(response.status==403)return window.location.href=`/login.html?certificate.html?${certificate_ID}`
-      window.location.replace("my_certificate.html")
+      if (response.status == 403)
+        return (window.location.href = `/login.html?certificate.html?${certificate_ID}`);
+      window.location.replace("my-certificate.html");
     } else {
       // document.addEventListener("DOMContentLoaded",()=>setText(result.message))
       setText(result.message);

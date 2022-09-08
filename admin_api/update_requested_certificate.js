@@ -104,10 +104,10 @@ Router.post("/decline", verifyToken, async (req, res) => {
     
  transporter2.sendMail(
    create_mail_options2({
-     Name: certificate.user.Name,
-     reciever: certificate.user.Email,
-     first_name: certificate.first_name,
-     last_name: certificate.last_name,
+     Name: certificate.user.Name||"",
+     reciever: certificate.user.Email||"",
+     first_name: certificate.first_name||"",
+     last_name: certificate.last_name||"",
      certificate_type: certificate.certificate_type,
      ID: certificate._id,
      //  date_requested:certificate.date_requested

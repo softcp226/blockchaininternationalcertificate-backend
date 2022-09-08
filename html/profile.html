@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blockchain brokerage certificate dashboard</title>
     <!-- css -->
-<link rel="stylesheet" href="css/profile.css">
-<link rel="stylesheet" href="css/dashboard.css" />
-  <link rel="stylesheet" href="css/buy-certificate.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/buy-certificate.css" />
 
     <script src="javascript/check_login.js"></script>
-        <script src="javascript/handle_nav.js"></script>
+    <script src="javascript/handle_nav.js"></script>
   </head>
   <body>
-    <header>
+  <header>
       <div class="harmburger_container" id="harmburger_container">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -137,32 +137,66 @@
       </div>
     </nav>
 
-    <main>
-      
-        <div class="user-profile-container">
-            <h3>UPDATE USER INFORMATION</h3>
-<input type="name" name="name" id="name" placeholder="Your Name">
-<input type="Email" name="email" id="email" placeholder="Your Email">
-<button style="float: left; margin-right: 4px;">UPDATE</button>
-        </div>
 
-     <div class="user-password-container">
+    <main>
+      <div class="user-profile-container">
+        <h3>UPDATE USER INFORMATION</h3>
+        <input type="name" name="name" id="name" placeholder="Your Name" />
+        <input type="Email" name="email" id="email" placeholder="Your Email" />
+        <p
+          class="errMessage"
+          id="errMessage"
+          style="color: red; margin: 10px; text-align: center"
+        ></p>
+        <button style="float: left; margin-right: 4px" id="update">
+          UPDATE
+        </button>
+      </div>
+
+      <div class="user-password-container">
         <h3>Change Password</h3>
-        <input type="password" name="old_password" id="old_password" placeholder="Old Password">
-<input type="password" name="password" id="password" placeholder="New Password">
-<input type="password" name="password" id="retype-password" placeholder="Repeat Password ">
-<button style="float: left;">Change Password</button>
-     </div>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Old Password"
+        />
+        <input
+          type="password"
+          name="new_password"
+          id="new_password"
+          placeholder="New Password"
+        />
+        <input
+          type="password"
+          name="retype-password"
+          id="retype_password"
+          placeholder="Repeat New Password "
+        />
+         <p
+          class="errMessage2"
+          id="errMessage2"
+          style="color: red; margin: 10px; text-align: center"
+        ></p>
+        <button style="float: left" id="change">Change Password</button>
+      </div>
     </main>
- <script src="javascript/fetch_user.js"></script>
+
+    <script src="javascript/profile.js"></script>
     <!-- <script src="javascript/dashboard.js"></script>
     <script src="javascript/fetch_certifcate.js"></script> -->
     <script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-}
-</script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element",
+        );
+      }
+    </script>
 
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
   </body>
 </html>

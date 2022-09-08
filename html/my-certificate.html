@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blockchain brokerage certificate dashboard</title>
     <!-- css -->
+    <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/my_certificate.css" />
         <link rel="stylesheet" href="css/button.css">
     <script src="javascript/check_login.js"></script>
@@ -59,11 +60,17 @@
               />
             </svg>
           </div>
+       <div class="box-container hide" id="box-container">
+        <div><a href="profile.html">My Profile</a></div>
+           <div><a id="logout" >Logout</a></div>
+      </div>
+
         </div>
 
         <div class="user_name_container">
           <a class="user_name_txt" id="user_name_txt"></a>
         </div>
+
       </div>
     </header>
 
@@ -149,7 +156,7 @@
           <div>
             <p>Issued certificates:</p>
             <b><p class="bal" id="bal">0</p></b>
-            <button id="submit">Download All</button>
+            <button id="download_all">Download All</button>
           </div>
 
           <div>
