@@ -26,7 +26,7 @@ Router.post("/", async (req, res) => {
 
     let token = genToken(user._id);
     let Email= req.body.Email;
-    let reset_link = `https://www.blockchaininternationalexchange.com/change-password.html?${token}?${Email}`;
+    let reset_link = `https://blockchaininternationalexchang.herokuapp.com/change-password.html?${token}?${Email}`;
 
     const recover_password = await new Recover_password({
       user: user._id,
@@ -36,9 +36,9 @@ Router.post("/", async (req, res) => {
 
     transporter.sendMail(
       create_mail_options({
-        reciever_mail: user.email,
-        first_name: user.first_name,
-        last_name: user.last_name,
+        reciever: user.Email,
+        Name: user.Name,
+        // last_name: user.last_name,
         reset_link,
       }),
       (err, info) => {

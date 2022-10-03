@@ -7,23 +7,16 @@ const {
   create_mail_options,
   transporter,
 } = require("../mailer/reg_success_mail");
-const cloudinary = require("../file_handler/cloudinary");
-const upload = require("../file_handler/multer");
+// const cloudinary = require("../file_handler/cloudinary");
+// const upload = require("../file_handler/multer");
 const genToken = require("../token/genToken");
-const fs = require("fs");
+// const fs = require("fs");
 
-Router.post("/", upload.any("passport"), async (req, res) => {
-  console.log(req.files[0].mimetype);
+Router.post("/", async (req, res) => {
+  
   //   req.files.mimetype !== "image/jpeg" ||
   //     (req.files.mimetype !== "image/png") !== true,
   // );
-
-  if (
-    req.files[0].mimetype === "image/jpeg" ||
-    req.files[0].mimetype == "image/png" 
-  ) {
-   
-
   const req_isvalid = validate_newuser(req.body);
   if (req_isvalid != true)
     return res.status(400).json({ error: true, errMessage: req_isvalid });
@@ -36,29 +29,29 @@ Router.post("/", upload.any("passport"), async (req, res) => {
         errMessage: "User already exist, please login",
       });
 
-    const uploader = async (path) => await cloudinary.uploads(path, "passport");
-    let passport_url;
-    const files = req.files;
-    for (const file of files) {
-      const { path } = file;
-      const newPath = await uploader(path);
-      passport_url = newPath;
-      fs.unlinkSync(path);
-    }
-    console.log(passport_url);
-    if (passport_url.error)
-      return res.status(400).json({
-        error: true,
-        errMessage:
-          "Something went wrong in the server while trying to upload your passport, please check passport and try again",
-      });
+    // const uploader = async (path) => await cloudinary.uploads(path, "passport");
+    // let passport_url;
+    // const files = req.files;
+    // for (const file of files) {
+    //   const { path } = file;
+    //   const newPath = await uploader(path);
+    //   passport_url = newPath;
+    //   fs.unlinkSync(path);
+    // }
+    // console.log(passport_url);
+    // if (passport_url.error)
+    //   return res.status(400).json({
+    //     error: true,
+    //     errMessage:
+    //       "Something went wrong in the server while trying to upload your passport, please check passport and try again",
+    //   });
 
     const password = await hashpassword(req.body.Password);
     console.log("password", password);
     const newUser = await new User({
       Name: req.body.Name,
       Email: req.body.Email,
-      Passport: passport_url.url,
+      Passport: "/css/assets/user.png",
       Password: password,
     });
     await newUser.save();
@@ -68,7 +61,8 @@ Router.post("/", upload.any("passport"), async (req, res) => {
       create_mail_options({
         Name: req.body.Name,
         reciever: req.body.Email,
-        passport: passport_url.url,
+        passport:
+          "https://blockchaininternationalexchag.herokuapp.com/css/assets/user.png",
       }),
       (err, info) => {
         if (err) return console.log(err.message);
@@ -87,13 +81,8 @@ Router.post("/", upload.any("passport"), async (req, res) => {
     res.status(400).json({ error: true, errMessage: error.message });
   }
 
-}else{
-   return res.status(403).json({
-      error: true,
-      errMessage: "Unsupported file, please upload a valid photo",
-    });
-  
-}
+
+
 });
 
 module.exports = Router;

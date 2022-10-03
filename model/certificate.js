@@ -32,7 +32,10 @@ const certificateSchema = mongoose.Schema({
     enum: [
       "basic yield certificate",
       "premium yield certificate",
+      "standard yield certificate",
+      "enterprise yield certificate",
       "ultimate yield certificate",
+
     ],
   },
   date_requested: {

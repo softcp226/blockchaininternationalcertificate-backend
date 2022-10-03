@@ -54,8 +54,16 @@ const certificate_type = (certificate) => {
       return "Premium";
       break;
 
-    case "ultimate yield certificate":
-      return "Ultimate";
+    case "standard yield certificate":
+      return "standard";
+      break;
+
+    case "premium yield certificate":
+      return "Premium";
+      break;
+
+    case "enterprise yield certificate":
+      return "enterprise";
       break;
 
     default:

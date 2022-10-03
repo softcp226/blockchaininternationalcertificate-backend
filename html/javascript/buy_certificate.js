@@ -3,11 +3,21 @@ let amount = 0;
 const handle_certificate_type = (certificate_type) => {
   switch (certificate_type) {
     case "basic yield certificate":
+      amount = 275;
+      document.querySelector(".amt").innerHTML = `Amount:$275`;
+      break;
+
+    case "premium yield certificate":
+      amount = 850;
+      document.querySelector(".amt").innerHTML = `Amount:$850`;
+      break;
+
+    case "standard yield certificate":
       amount = 1250;
       document.querySelector(".amt").innerHTML = `Amount:$1,250`;
       break;
 
-    case "premium yield certificate":
+    case "enterprise yield certificate":
       amount = 3250;
       document.querySelector(".amt").innerHTML = `Amount:$3,250`;
       break;

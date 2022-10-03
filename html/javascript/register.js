@@ -21,7 +21,8 @@ const handle_formSubmit = async (formdata) => {
   try {
     const response = await fetch("/api/newUser/register", {
       method: "POST",
-      body: formdata,
+      headers:{"content-type":"application/json"},
+      body: JSON.stringify(formdata),
     });
     const result = await response.json();
     console.log(result);
@@ -44,13 +45,13 @@ document.querySelector("#submit").onclick = () => {
 
   const Name = document.querySelector("#name");
   const Email = document.querySelector("#email");
-  const Photo = document.querySelector("#photo");
+  // const Photo = document.querySelector("#photo");
   const Password = document.querySelector("#password");
   const Re_password = document.querySelector("#re_password");
 
   if (!Name.value) return show_input_error(Name);
   if (!Email.value) return show_input_error(Email);
-  if (!Photo.files[0]) return show_input_error(Photo);
+  // if (!Photo.files[0]) return show_input_error(Photo);
   if (!Password.value) return show_input_error(Password);
   if (Password.value.length < 8) {
     document.querySelector("#errMessage").innerHTML =
@@ -67,13 +68,14 @@ document.querySelector("#submit").onclick = () => {
     return;
   }
 
-  const formdata = new FormData();
-  formdata.append("Name", Name.value);
-  formdata.append("Email", Email.value);
-  formdata.append("Photo", Photo.files[0]);
-  formdata.append("Password", Password.value);
+  // const formdata = new FormData();
+  // formdata.append("Name", Name.value);
+  // formdata.append("Email", Email.value);
+  // // formdata.append("Photo", Photo.files[0]);
+  // formdata.append("Password", Password.value);
 
-  handle_formSubmit(formdata);
+  // handle_formSubmit(formdata);
+  handle_formSubmit({ Name: Name.value, Email:Email.value,Password:Password.value});
 };
 
 document.querySelectorAll("input").forEach((input) => {
