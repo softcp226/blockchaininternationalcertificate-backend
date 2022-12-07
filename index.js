@@ -2,6 +2,13 @@ const express = require("express");
 require("dotenv").config();
 const app = express();
 app.use(express.json());
+const cors = require("cors");
+app.use(cors());
+
+app.post("/", (req, res) =>
+  res.status(200).json({ error: false, message: req.body }),
+);
+
 const register_user = require("./api/register");
 app.use("/api/newUser/register", register_user);
 const login = require("./api/login");
@@ -58,14 +65,13 @@ app.use("/api/user/certificate/pay", pay_for_certificate);
 const fetch_one_certificate = require("./api/fetch_certificate-one");
 app.use("/api/user/certificate/fetchOne", fetch_one_certificate);
 
-const recover_password=require("./api/recover-password")
-app.use("/api/user/password/recover",recover_password)
+const recover_password = require("./api/recover-password");
+app.use("/api/user/password/recover", recover_password);
 
-const change_password=require("./api/change-password")
-app.use("/api/user/password/change",change_password)
-const update_user=require("./api/update-user")
-app.use("/api/user/update",update_user)
-
+const change_password = require("./api/change-password");
+app.use("/api/user/password/change", change_password);
+const update_user = require("./api/update-user");
+app.use("/api/user/update", update_user);
 
 app.use("/", express.static("html"));
 app.use("/admin", express.static("admin"));
@@ -74,6 +80,5 @@ const port = process.env.PORT || 3000;
 app.listen(port, () =>
   console.log(`App started and is running on port ${port}`),
 );
-
 
 ///api/user/update

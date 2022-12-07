@@ -6,9 +6,10 @@
   "scripts": {
     "test": "nodemon index.js",
     "start": "nodemon index.js"
-    
   },
-  "engines": { "node": "16.x" },
+  "engines": {
+    "node": "16.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/softcp226/blockchaininternationalexchange.git"
@@ -23,6 +24,7 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cloudinary": "^1.30.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "joi": "^17.6.0",
