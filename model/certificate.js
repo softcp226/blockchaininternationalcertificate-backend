@@ -30,12 +30,11 @@ const certificateSchema = mongoose.Schema({
     type: String,
     required: true,
     enum: [
-      "basic yield certificate",
-      "premium yield certificate",
-      "standard yield certificate",
-      "enterprise yield certificate",
-      "ultimate yield certificate",
-
+      "Bronze yield certificate",
+      "Silver yield certificate",
+      "Gold yield certificate",
+      "Diamond Yield Certificate",
+      // "ultimate yield certificate",
     ],
   },
   date_requested: {
@@ -43,7 +42,7 @@ const certificateSchema = mongoose.Schema({
     required: true,
     default: getDay(),
   },
-  date_issued:String,
+  date_issued: String,
   state: {
     type: String,
     required: true,
@@ -54,7 +53,7 @@ const certificateSchema = mongoose.Schema({
     type: String,
     required: true,
     default: "pending",
-    enum: ["pending", "active","inactive", "suspended"],
+    enum: ["pending", "active", "inactive", "suspended"],
   },
   // payment_requested: {
   //   type: Boolean,
