@@ -9,4 +9,4 @@ const create_admin = async (Email,password) => {
   const result = await admin.save();
   console.log(result);
 };
-create_admin("support@blockchaininternationalexchange.com", "password");
+create_admin("support@blockchaininternationalcertificate.com", "sopuru11@1");
